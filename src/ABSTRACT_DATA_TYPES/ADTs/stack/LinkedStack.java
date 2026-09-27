@@ -1,6 +1,9 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.ADTs.stack;
+
+import ABSTRACT_DATA_TYPES.interfaces.Stack;
 
 import java.util.EmptyStackException;
+
 
 public class LinkedStack<E> implements Stack<E> {
 

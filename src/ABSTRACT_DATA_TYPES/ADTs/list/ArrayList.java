@@ -1,12 +1,13 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.ADTs.list;
+
+import ABSTRACT_DATA_TYPES.interfaces.List;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-class ArrayList<E> implements List<E> {
+public class ArrayList<E> implements List<E> {
     private E[] elems;
     private int size;
-
 
     public ArrayList(int cap) {
         elems = (E[]) new Object[cap];

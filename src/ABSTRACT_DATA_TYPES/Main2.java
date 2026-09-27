@@ -1,5 +1,12 @@
 package ABSTRACT_DATA_TYPES;
 
+import ABSTRACT_DATA_TYPES.interfaces.List;
+import ABSTRACT_DATA_TYPES.ADTs.list.ArrayList;
+import ABSTRACT_DATA_TYPES.ADTs.list.LinkedList;
+import ABSTRACT_DATA_TYPES.interfaces.Set;
+import ABSTRACT_DATA_TYPES.ADTs.set.ArraySet;
+import ABSTRACT_DATA_TYPES.ADTs.set.LinkedSet;
+
 import java.util.Iterator;
 
 public class Main2 {

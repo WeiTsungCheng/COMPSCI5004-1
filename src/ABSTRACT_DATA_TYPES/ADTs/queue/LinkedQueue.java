@@ -1,7 +1,10 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.ADTs.queue;
+
+import ABSTRACT_DATA_TYPES.interfaces.Queue;
 
 import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
+
 
 public class LinkedQueue<E> implements Queue<E> {
     private Node<E> front, rear;

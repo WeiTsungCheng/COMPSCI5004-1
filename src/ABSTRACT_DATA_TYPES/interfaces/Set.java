@@ -1,4 +1,4 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.interfaces;
 import java.util.Iterator;
 
 public interface Set<E> {

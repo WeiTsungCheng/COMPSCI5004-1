@@ -1,4 +1,4 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.interfaces;
 
 public interface Queue<E> {
     public boolean isEmpty();

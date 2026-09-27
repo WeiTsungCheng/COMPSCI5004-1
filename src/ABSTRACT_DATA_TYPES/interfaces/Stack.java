@@ -1,4 +1,4 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.interfaces;
 
 public interface Stack <E>{
     public void push(E it);

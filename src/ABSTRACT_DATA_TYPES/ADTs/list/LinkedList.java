@@ -1,4 +1,6 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.ADTs.list;
+
+import ABSTRACT_DATA_TYPES.interfaces.List;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

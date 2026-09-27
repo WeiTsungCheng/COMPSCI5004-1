@@ -1,5 +1,12 @@
 package ABSTRACT_DATA_TYPES;
 
+import ABSTRACT_DATA_TYPES.interfaces.Stack;
+import ABSTRACT_DATA_TYPES.ADTs.stack.ArrayStack;
+import ABSTRACT_DATA_TYPES.ADTs.stack.LinkedStack;
+import ABSTRACT_DATA_TYPES.interfaces.Queue;
+import ABSTRACT_DATA_TYPES.ADTs.queue.ArrayQueue;
+import ABSTRACT_DATA_TYPES.ADTs.queue.LinkedQueue;
+
 public class Main1 {
     public static void main(String[] args) {
 

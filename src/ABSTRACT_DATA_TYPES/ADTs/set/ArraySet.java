@@ -1,4 +1,6 @@
-package ABSTRACT_DATA_TYPES;
+package ABSTRACT_DATA_TYPES.ADTs.set;
+
+import ABSTRACT_DATA_TYPES.interfaces.Set;
 
 import java.util.Comparator;
 import java.util.Iterator;
