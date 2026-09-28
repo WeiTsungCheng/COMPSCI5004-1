@@ -20,7 +20,6 @@ public class HashSet<E> implements Set<E> {
         }
     }
 
-    @SuppressWarnings("unchecked")
     public HashSet(int capacity) {
         if (capacity <= 0) {
             throw new IllegalArgumentException(

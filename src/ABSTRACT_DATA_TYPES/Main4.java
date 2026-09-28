@@ -14,8 +14,6 @@ public class Main4 {
         assert numbers.isEmpty();
         assert numbers.size() == 0;
 
-        // 碰撞測試：1、4、7 都放進索引 1 的桶子
-        // 插入後：7 → 4 → 1
         numbers.add(1);
         numbers.add(4);
         numbers.add(7);
@@ -30,24 +28,20 @@ public class Main4 {
         numbers.add(4);
         assert numbers.size() == 3;
 
-        // 刪除中間節點：7 → 1
         numbers.remove(4);
         assert !numbers.contains(4);
         assert numbers.contains(7);
         assert numbers.contains(1);
         assert numbers.size() == 2;
 
-        // 刪除尾端節點，只剩 7
         numbers.remove(1);
         assert !numbers.contains(1);
         assert numbers.contains(7);
         assert numbers.size() == 1;
 
-        // 刪除最後剩下的節點
         numbers.remove(7);
         assert numbers.isEmpty();
 
-        // 刪除不存在的元素
         numbers.remove(100);
         assert numbers.size() == 0;
 
