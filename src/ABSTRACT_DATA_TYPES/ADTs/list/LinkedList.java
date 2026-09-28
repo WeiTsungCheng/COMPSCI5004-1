@@ -130,5 +130,30 @@ public class LinkedList<E> implements List<E> {
         return curr;
     }
 
+    public boolean equals(List<E> that) {
+        if (that == null) return false;
+        if (this == that) return true;
+        if (this.size() != that.size()) return false;
+
+        Iterator<E> left = this.iterator();
+        Iterator<E> right = that.iterator();
+
+        while (left.hasNext()) {
+            if (!java.util.Objects.equals(left.next(), right.next())) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void addAll(List<E> that) {
+        int count = that.size();
+        Iterator<E> iterator = that.iterator();
+
+        for (int i = 0; i < count; i++) {
+            addLast(iterator.next());
+        }
+    }                             
 
 }

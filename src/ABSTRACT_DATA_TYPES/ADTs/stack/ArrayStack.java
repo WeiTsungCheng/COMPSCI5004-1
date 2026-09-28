@@ -41,4 +41,10 @@ public class ArrayStack <E> implements Stack<E>{
         return topElem;
     };
 
+    public void clear() {
+        while (size > 0) {
+            elems[--size] = null;
+        }
+    }
+
 }

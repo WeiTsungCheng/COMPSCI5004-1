@@ -22,19 +22,15 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         size = 0;
     }
 
-    @Override
     public boolean isEmpty() { return size == 0; }
 
-    @Override
     public int size() { return size; }
 
-    @Override
     public void clear() {
         first = null;
         size = 0;
     }
 
-    @Override
     public boolean contains(E it) {
         Node<E> curr = first;
         while (curr != null) {
@@ -46,7 +42,6 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         return false;
     }
 
-    @Override
     public void add(E it) {
         if (first == null || first.element.compareTo(it) > 0) {
             first = new Node<>(it, first);
@@ -68,7 +63,6 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         size++;
     }
 
-    @Override
     public void remove(E it) {
 
         if (first == null) return;
@@ -92,9 +86,8 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         }
     }
 
-    @Override
     public boolean equals(Set<E> that) {
-        if (this.size != that.size()) return false;
+        if (that == null || this.size != that.size()) return false;
 
         Iterator<E> iter1 = this.iterator();
         Iterator<E> iter2 = that.iterator();
@@ -104,7 +97,6 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         return true;
     }
 
-    @Override
     public boolean containsAll(Set<E> that) {
         Iterator<E> iter = that.iterator();
         while (iter.hasNext()) {
@@ -113,7 +105,6 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         return true;
     }
 
-    @Override
     public void addAll(Set<E> that) {
         Iterator<E> iter = that.iterator();
         while (iter.hasNext()) {
@@ -121,15 +112,18 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         }
     }
 
-    @Override
     public void removeAll(Set<E> that) {
+        // 自己減去自己應為空集合，避免一邊走訪一邊刪除而漏掉元素
+        if (this == that) {
+            clear();
+            return;
+        }
         Iterator<E> iter = that.iterator();
         while (iter.hasNext()) {
             this.remove(iter.next());
         }
     }
 
-    @Override
     public void retainAll(Set<E> that) {
         Node<E> curr = first;
         while (curr != null) {
@@ -141,7 +135,6 @@ public class LinkedSet<E extends Comparable<E>> implements Set<E> {
         }
     }
 
-    @Override
     public Iterator<E> iterator() {
         return new LinkedSetIterator();
     }

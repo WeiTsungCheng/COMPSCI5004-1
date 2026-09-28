@@ -1,6 +1,6 @@
+
 package ABSTRACT_DATA_TYPES.interfaces;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public interface List<E> {
     public boolean isEmpty();
@@ -12,6 +12,9 @@ public interface List<E> {
     public void add(int p, E it);
     public void addLast(E it);
     public E remove(int p);
+
+    public boolean equals(List<E> that);
+    public void addAll(List<E> that);
 
     public Iterator<E> iterator();
 }

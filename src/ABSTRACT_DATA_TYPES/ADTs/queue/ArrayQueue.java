@@ -2,7 +2,6 @@ package ABSTRACT_DATA_TYPES.ADTs.queue;
 
 import ABSTRACT_DATA_TYPES.interfaces.Queue;
 
-import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 
@@ -26,7 +25,7 @@ public class ArrayQueue<E> implements Queue<E>{
     };
 
     public E getFirst() {
-        if (size == 0) throw new EmptyStackException();
+        if (size == 0) throw new NoSuchElementException();
         return elems[front];
     };
 

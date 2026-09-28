@@ -2,7 +2,6 @@ package ABSTRACT_DATA_TYPES.ADTs.set;
 
 import ABSTRACT_DATA_TYPES.interfaces.Set;
 
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -29,7 +28,7 @@ public class ArraySet<E extends Comparable> implements Set<E> {
     };
 
     public boolean equals(Set<E> that) {
-        if (this.size != that.size()) return false;
+        if (that == null || this.size != that.size()) return false;
         // 兩者皆為排序狀態，進行成對比較 (Pairwise comparison) O(n) [3]
         Iterator<E> iter1 = this.iterator();
         Iterator<E> iter2 = that.iterator();
@@ -84,6 +83,16 @@ public class ArraySet<E extends Comparable> implements Set<E> {
     };
 
     public void addAll(Set<E> that) {
+        // 先確認新增的不重複元素是否放得下，避免加到一半才失敗
+        int newMembers = 0;
+        Iterator<E> check = that.iterator();
+        while (check.hasNext()) {
+            if (!this.contains(check.next())) newMembers++;
+        }
+        if (newMembers > members.length - size) {
+            throw new IllegalStateException("Set is full");
+        }
+
         // 陣列合併 (Array merge) 概念實作 [3]
         Iterator<E> iter = that.iterator();
         while (iter.hasNext()) {
@@ -92,6 +101,11 @@ public class ArraySet<E extends Comparable> implements Set<E> {
     };
 
     public void removeAll(Set<E> that) {
+        // 自己減去自己應為空集合，避免一邊走訪一邊刪除而漏掉元素
+        if (this == that) {
+            clear();
+            return;
+        }
         Iterator<E> iter = that.iterator();
         while (iter.hasNext()) {
             this.remove(iter.next());

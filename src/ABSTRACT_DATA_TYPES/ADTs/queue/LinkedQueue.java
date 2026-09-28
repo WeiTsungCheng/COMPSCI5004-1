@@ -2,7 +2,6 @@ package ABSTRACT_DATA_TYPES.ADTs.queue;
 
 import ABSTRACT_DATA_TYPES.interfaces.Queue;
 
-import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 
 

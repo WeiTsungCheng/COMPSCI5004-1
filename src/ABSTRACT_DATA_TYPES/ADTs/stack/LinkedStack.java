@@ -38,4 +38,8 @@ public class LinkedStack<E> implements Stack<E> {
     public boolean isEmpty() {
         return  (top == null);
     };
+
+    public void clear() {
+        top = null;
+    }
 }

@@ -81,4 +81,36 @@ public class ArrayList<E> implements List<E> {
             return elems[current++];
         }
     }
+
+    public boolean equals(List<E> that) {
+        if (that == null) return false;
+        if (this == that) return true;
+        if (this.size() != that.size()) return false;
+
+        Iterator<E> left = this.iterator();
+        Iterator<E> right = that.iterator();
+
+        while (left.hasNext()) {
+            if (!java.util.Objects.equals(left.next(), right.next())) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void addAll(List<E> that) {
+        int count = that.size();
+
+        // 先檢查全部是否放得下，避免加到一半才失敗
+        if (count > elems.length - size) {
+            throw new IllegalStateException("List is full");
+        }
+
+        Iterator<E> iterator = that.iterator();
+
+        for (int i = 0; i < count; i++) {
+            addLast(iterator.next());
+        }
+    }
 }
